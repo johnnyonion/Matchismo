@@ -7,16 +7,15 @@
 //
 
 #import "CardsViewController.h"
-#import "PlayingCardDeck.h"
+#import "Deck.h"
 #import "CardMatchingGame.h"
 
 @interface CardsViewController ()
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
 @property (strong, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
-@property (strong, nonatomic) CardMatchingGame *game;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *whatLabel;
+
+
 
 @end
 
@@ -34,10 +33,14 @@
 - (CardMatchingGame *)game
 {
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
-                                                          usingDeck:[[PlayingCardDeck alloc] init]
-                                                      matchingCount:3];
+                                                          usingDeck:[self createDeck]
+                                                      matchingCount:self.matchCount];
+    
+    NSLog(@"Match Count: %d", self.matchCount);
     return _game;
 }
+
+- (Deck *)createDeck { return nil; }
 
 - (void)updateUI
 {
