@@ -24,6 +24,7 @@
                         card.symbol = symbol;
                         card.shade = shade;
                         card.colorString = color;
+                        card.number = number;
                     
                         [self addCard:card atTop:YES];
                     }
