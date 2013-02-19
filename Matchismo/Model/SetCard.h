@@ -13,9 +13,11 @@
 @property (nonatomic, strong) NSString *symbol;
 @property (nonatomic, strong) NSString *colorString;
 @property (nonatomic, strong) NSString *shade;
+@property (nonatomic, strong) NSNumber *number;
 
 + (NSArray *)validSymbols;
 + (NSArray *)validColors;
 + (NSArray *)validShade;
++ (NSArray *)validNumberOfSymbols;
 
 @end
