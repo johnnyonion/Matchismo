@@ -17,15 +17,16 @@
     
     if (self) {
         for (NSString *symbol in [SetCard validSymbols]) {
-            for (NSString *color in [SetCard validColors]) {
-                for (NSString *shade in [SetCard validShade]) {
-                    SetCard *card = [[SetCard alloc] init];
-                    card.symbol = symbol;
-                    card.shade = shade;
-                    card.colorString = color;
+            for (NSNumber *number in [SetCard vailidNumberOfSymbols]) {
+                for (NSString *color in [SetCard validColors]) {
+                    for (NSString *shade in [SetCard validShade]) {
+                        SetCard *card = [[SetCard alloc] init];
+                        card.symbol = symbol;
+                        card.shade = shade;
+                        card.colorString = color;
                     
-                    [self addCard:card atTop:YES];
-                    
+                        [self addCard:card atTop:YES];
+                    }
                 }
             }
         }
